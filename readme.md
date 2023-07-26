@@ -199,3 +199,48 @@ $ git reset --hard
 HEAD is now at 24552fa Adding the home and about page
 
 ```
+
+## Bundle 2
+
+### Exercise 1
+
+```bash
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (dev)
+$ git switch -C ft/bundle-2
+Switched to a new branch 'ft/bundle-2'
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/bundle-2)
+$ echo "" > service.html
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/bundle-2)
+$ git add service.html
+warning: in the working copy of 'service.html', LF will be replaced by CRLF the next time Git touches it
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/bundle-2)
+$ git commit -m "Adding the Service Page"
+[ft/bundle-2 eec7020] Adding the Service Page
+ 1 file changed, 11 insertions(+)
+ create mode 100644 service.html
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/bundle-2)
+$ ggit push -u origin ft/bundle-2
+bash: $'\302\226git': command not found
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/bundle-2)
+$ git push -u origin ft/bundle-2
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 465 bytes | 232.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/bundle-2' on GitHub by visiting:
+remote:      https://github.com/danielerat/git-exercise/pull/new/ft/bundle-2
+remote:
+To https://github.com/danielerat/git-exercise.git
+ * [new branch]      ft/bundle-2 -> ft/bundle-2
+branch 'ft/bundle-2' set up to track 'origin/ft/bundle-2'.
+
+```
