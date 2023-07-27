@@ -433,3 +433,325 @@ remote: Resolving deltas: 100% (2/2), completed with 2 local o
 To https://github.com/danielerat/git-exercise.git
    1f70cd1..72a0d91  main -> main
 ```
+
+## Bundle 3
+
+### Exercise 1
+
+```bash
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (main)
+$ git branch
+  dev
+  ft/bundle-2
+  ft/service-redesign
+* main
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (main)
+$ git switch -C ft/team-page
+Switched to a new branch 'ft/team-page'
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/team-page)
+$ touch team.html
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/team-page)
+$ git add team.html
+g
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/team-page)
+$ git commit -m "Adding the team page
+> - Creating the page for our team
+> "
+[ft/team-page a16f52d] Adding the team page - Creating the page for our team
+ 1 file changed, 11 insertions(+)
+ create mode 100644 team.html
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/team-page)
+$ git push --set-upstream origin main
+Everything up-to-date
+branch 'main' set up to track 'origin/main'.
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/team-page)
+$ git status
+On branch ft/team-page
+nothing to commit, working tree clean
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/team-page)
+$ git log
+commit a16f52dfdf970d0a3a33bc2a865357358b404969 (HEAD -> ft/team-page)
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Thu Jul 27 11:15:34 2023 +0200
+
+    Adding the team page
+    - Creating the page for our team
+
+commit 3eab4a17801f68ea9c36f1379055d1842b03cd68 (origin/main, main)
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Thu Jul 27 11:11:51 2023 +0200
+
+    Updating the history of the readme.md file
+
+commit 72a0d91b9b8bc70135b2607feff7cad943c0a360
+Merge: 1f70cd1 8b27feb
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Thu Jul 27 11:07:09 2023 +0200
+
+    Merge branch 'ft/service-redesign'
+
+commit 1f70cd1c1681d660fb9b417c10a676aecfd582f8
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Thu Jul 27 10:57:39 2023 +0200
+
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/team-page)
+$
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/team-page)
+$ git push
+fatal: The current branch ft/team-page has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/team-page
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/team-page)
+$ git push --set-upstream origin ft/team-page
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 477 bytes | 119.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/team-page' on GitHub by visiting:
+remote:      https://github.com/danielerat/git-exercise/pull/new/ft/team-page
+remote:
+To https://github.com/danielerat/git-exercise.git
+ * [new branch]      ft/team-page -> ft/team-page
+branch 'ft/team-page' set up to track 'origin/ft/team-page'.
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/team-page)
+$ git switch main
+bash: $'\302\203\302\203git': command not found
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/team-page)
+$ git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (main)
+$ git switch -C ft/contact-page
+Switched to a new branch 'ft/contact-page'
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/contact-page)
+$ git switch ft/team-page
+Switched to branch 'ft/team-page'
+Your branch is up to date with 'origin/ft/team-page'.
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/team-page)
+$ ggit log --oneline --all --graph
+bash: $'\302\226git': command not found
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/team-page)
+$git log --oneline --all --graph
+* a16f52d (HEAD -> ft/team-page, origin/ft/team-page) Adding the team page - Creating the page for our team
+* 3eab4a1 (origin/main, main, ft/contact-page) Updating the history of the readme.md file
+*   72a0d91 Merge branch 'ft/service-redesign'
+|\
+| * 8b27feb (origin/ft/service-redesign, ft/service-redesign) Changing the service page - Adding two ninjas
+* | 1f70cd1 Adding A ninja from somewhere else in the service page
+|/
+* b9a0917 Bundle 2 Exercise 1 history
+*   a816703 Merge pull request #1 from danielerat/ft/bundle-2
+|\
+| * eec7020 (origin/ft/bundle-2, ft/bundle-2) Adding the Service Page
+| * 531ca3d (origin/dev, dev) Bundle 1 Exercise 2
+| * 24552fa Adding the home and about page
+| * 5133a5a Adding our home page
+| * 7cf6915 Exercise 1 history
+|/
+* 3af0a29 Initial commit with a readmefile
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/team-page)
+$ git switch ft/contact-page
+Switched to branch 'ft/contact-page'
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/contact-page)
+$ git cherry-pick a16f52d
+[ft/contact-page 7ee7885] Adding the team page - Creating the page for our team
+ Date: Thu Jul 27 11:15:34 2023 +0200
+ 1 file changed, 11 insertions(+)
+ create mode 100644 team.html
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/contact-page)
+$ git log --oneline --all --graph
+* 7ee7885 (HEAD -> ft/contact-page) Adding the team page - Creating the page for our team
+| * a16f52d (origin/ft/team-page, ft/team-page) Adding the team page - Creating the page for our team
+|/
+* 3eab4a1 (origin/main, main) Updating the history of the readme.md file
+*   72a0d91 Merge branch 'ft/service-redesign'
+|\
+| * 8b27feb (origin/ft/service-redesign, ft/service-redesign) Changing the service page - Adding two ninjas
+* | 1f70cd1 Adding A ninja from somewhere else in the service page
+|/
+* b9a0917 Bundle 2 Exercise 1 history
+*   a816703 Merge pull request #1 from danielerat/ft/bundle-2
+|\
+| * eec7020 (origin/ft/bundle-2, ft/bundle-2) Adding the Service Page
+| * 531ca3d (origin/dev, dev) Bundle 1 Exercise 2
+| * 24552fa Adding the home and about page
+| * 5133a5a Adding our home page
+| * 7cf6915 Exercise 1 history
+|/
+* 3af0a29 Initial commit with a readmefile
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/contact-page)
+$ touch contact.html
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/contact-page)
+$ git add contact.html
+g
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/contact-page)
+$ git commit -m "Adding the contact page"
+[ft/contact-page 1129b47] Adding the contact page
+ 1 file changed, 11 insertions(+)
+ create mode 100644 contact.html
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/contact-page)
+$ git push
+fatal: The current branch ft/contact-page has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/contact-page
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/contact-page)
+$ git push --set-upstream origin ft/contact-page
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 783 bytes | 195.00 KiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/contact-page' on GitHub by visiting:
+remote:      https://github.com/danielerat/git-exercise/pull/new/ft/contact-page
+remote:
+To https://github.com/danielerat/git-exercise.git
+ * [new branch]      ft/contact-page -> ft/contact-page
+branch 'ft/contact-page' set up to track 'origin/ft/contact-page'.
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/contact-page)
+$ git status
+On branch ft/contact-page
+Your branch is up to date with 'origin/ft/contact-page'.
+
+nothing to commit, working tree clean
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/contact-page)
+$ git switch -C ft/faq-page
+Switched to a new branch 'ft/faq-page'
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/faq-page)
+$ touch faq.html
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/faq-page)
+$ git add faq.html
+git
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/faq-page)
+$ git commit -m "Creating our faq page"
+[ft/faq-page 44717f6] Creating our faq page
+ 1 file changed, 23 insertions(+)
+ create mode 100644 faq.html
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/faq-page)
+$ git push --set-upstream origin ft/faq-page
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 621 bytes | 310.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/faq-page' on GitHub by visiting:
+remote:      https://github.com/danielerat/git-exercise/pull/new/ft/faq-page
+remote:
+To https://github.com/danielerat/git-exercise.git
+ * [new branch]      ft/faq-page -> ft/faq-page
+branch 'ft/faq-page' set up to track 'origin/ft/faq-page'.
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/faq-page)
+$ git log --oneline --all --graph
+* 44717f6 (HEAD -> ft/faq-page, origin/ft/faq-page) Creating our faq page
+* 1129b47 (origin/ft/contact-page, ft/contact-page) Adding the contact page
+* 7ee7885 Adding the team page - Creating the page for our team
+| * a16f52d (origin/ft/team-page, ft/team-page) Adding the team page - Creating the page for our team
+|/
+* 3eab4a1 (origin/main, main) Updating the history of the readme.md file
+*   72a0d91 Merge branch 'ft/service-redesign'
+|\
+| * 8b27feb (origin/ft/service-redesign, ft/service-redesign) Changing the service page - Adding two ninjas
+* | 1f70cd1 Adding A ninja from somewhere else in the service page
+|/
+* b9a0917 Bundle 2 Exercise 1 history
+*   a816703 Merge pull request #1 from danielerat/ft/bundle-2
+|\
+| * eec7020 (origin/ft/bundle-2, ft/bundle-2) Adding the Service Page
+| * 531ca3d (origin/dev, dev) Bundle 1 Exercise 2
+| * 24552fa Adding the home and about page
+| * 5133a5a Adding our home page
+| * 7cf6915 Exercise 1 history
+|/
+* 3af0a29 Initial commit with a readmefile
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/faq-page)
+$ git revert a16f52d
+[ft/faq-page 821ae3a] Revert "Adding the team page"
+ 1 file changed, 11 deletions(-)
+ delete mode 100644 team.html
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/faq-page)
+$ git log --oneline --all --graph
+* 821ae3a (HEAD -> ft/faq-page) Revert "Adding the team page"
+* 44717f6 (origin/ft/faq-page) Creating our faq page
+* 1129b47 (origin/ft/contact-page, ft/contact-page) Adding the contact page
+* 7ee7885 Adding the team page - Creating the page for our team
+| * a16f52d (origin/ft/team-page, ft/team-page) Adding the team page - Creating the page for our team
+|/
+* 3eab4a1 (origin/main, main) Updating the history of the readme.md file
+*   72a0d91 Merge branch 'ft/service-redesign'
+|\
+| * 8b27feb (origin/ft/service-redesign, ft/service-redesign) Changing the service page - Adding two ninjas
+* | 1f70cd1 Adding A ninja from somewhere else in the service page
+|/
+* b9a0917 Bundle 2 Exercise 1 history
+*   a816703 Merge pull request #1 from danielerat/ft/bundle-2
+|\
+| * eec7020 (origin/ft/bundle-2, ft/bundle-2) Adding the Service Page
+| * 531ca3d (origin/dev, dev) Bundle 1 Exercise 2
+| * 24552fa Adding the home and about page
+| * 5133a5a Adding our home page
+| * 7cf6915 Exercise 1 history
+|/
+* 3af0a29 Initial commit with a readmefile
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/faq-page)
+$ git push
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 274 bytes | 137.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/danielerat/git-exercise.git
+   44717f6..821ae3a  ft/faq-page -> ft/faq-page
+
+```
