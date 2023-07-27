@@ -244,3 +244,192 @@ To https://github.com/danielerat/git-exercise.git
 branch 'ft/bundle-2' set up to track 'origin/ft/bundle-2'.
 
 ```
+
+### Exercise 2
+
+```bash
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (main)
+$ git switch -C ft/service-redesign
+Switched to a new branch 'ft/service-redesign'
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/se
+$ git add .
+gt
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/se
+$ git status
+On branch ft/service-redesign
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   service.html
+
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/se
+$ git commit -m "Changing the service page
+> - Adding two ninjas "
+[ft/service-redesign 8b27feb] Changing the service page - Addi
+ 1 file changed, 1 insertion(+)
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/se
+$ git push
+fatal: The current branch ft/service-redesign has no upstream
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/service-redesign
+
+To have this happen automatically for branches without a track
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/se
+$ git push --set-upstream origin ft/service-redesign
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 359 bytes | 119.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local o
+remote:
+remote: Create a pull request for 'ft/service-redesign' on Git
+remote:      https://github.com/danielerat/git-exercise/pull/nsign
+remote:
+To https://github.com/danielerat/git-exercise.git
+ * [new branch]      ft/service-redesign -> ft/service-redesig
+branch 'ft/service-redesign' set up to track 'origin/ft/servic'
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/se
+$ git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (main)
+$ git log
+commit b9a0917f8bbe5f8a8fface7baab4db9ccfb9660a (HEAD -> main,
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Wed Jul 26 12:14:07 2023 +0200
+
+    Bundle 2 Exercise 1 history
+
+commit a816703e8d91ac17f5073bb168818b7079c4d79a
+Merge: 3af0a29 eec7020
+Author: Moussa Kalam AMZAT <m.amzat@alustudent.com>
+Date:   Wed Jul 26 11:54:47 2023 +0200
+
+    Merge pull request #1 from danielerat/ft/bundle-2
+
+    Ft/bundle 2
+
+commit eec7020fe7401d5f86621708469d026ee130f59a (origin/ft/bun)
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Wed Jul 26 10:56:30 2023 +0200
+
+    Adding the Service Page
+
+commit 531ca3d80f50d352b09eb1b0a46d5b4e92a792ea (origin/dev, d
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working d
+        modified:   service.html
+
+no changes added to commit (use "git add" and/or "git commit -"
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (main)
+$ git add service.html
+g
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (main)
+$ git commit -m "Adding A ninja from somewhere else in the ser
+[main 1f70cd1] Adding A ninja from somewhere else in the servi
+ 1 file changed, 1 insertion(+)"
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 356 bytes | 356.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local o
+To https://github.com/danielerat/git-exercise.git
+   b9a0917..1f70cd1  main -> main
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (main)
+$ git branch
+  dev
+  ft/bundle-2
+  ft/service-redesign
+* main
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (main)
+$ git switch ft/service-redesign
+Switched to branch 'ft/service-redesign'
+Your branch is up to date with 'origin/ft/service-redesign'.
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/se
+$ git diff main ft/service-redesign
+diff --git a/service.html b/service.html
+index 251dcb3..68b430d 100644
+--- a/service.html
++++ b/service.html
+@@ -7,6 +7,6 @@
+   </head>
+   <body>
+     <h1>This is the service page 🥷</h1>
+-    <p>New Ninja from somwhere else ! 🥷</p>
++    <h2>Now we are switching to two ninjas 🥷🥷</h2>
+   </body>
+ </html>
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/se
+$ git diff ft/service-redesign main
+diff --git a/service.html b/service.html
+index 68b430d..251dcb3 100644
+--- a/service.html
++++ b/service.html
+@@ -7,6 +7,6 @@
+   </head>
+   <body>
+     <h1>This is the service page 🥷</h1>
+-    <h2>Now we are switching to two ninjas 🥷🥷</h2>
++    <p>New Ninja from somwhere else ! 🥷</p>
+   </body>
+ </html>
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/se
+$ git switch master
+fatal: invalid reference: master
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/se
+$ git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (main)
+$ git merge ft/servise-redesign
+merge: ft/servise-redesign - not something we can merge
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (main)
+$ git merge ft/service-redesign
+Auto-merging service.html
+CONFLICT (content): Merge conflict in service.html
+Automatic merge failed; fix conflicts and then commit the resu
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (main)
+$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 372 bytes | 124.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local o
+To https://github.com/danielerat/git-exercise.git
+   1f70cd1..72a0d91  main -> main
+```
