@@ -755,3 +755,106 @@ To https://github.com/danielerat/git-exercise.git
    44717f6..821ae3a  ft/faq-page -> ft/faq-page
 
 ```
+
+## Bundle 4
+
+### Exercise 1
+
+```bash
+ilung@Danielerat MINGW64 ~/OneDrive/desktop/gitExercise (ft/home-page-redesign)
+$ git switch main
+Switched to branch 'main'
+Your branch is behind 'origin/main' by 14 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+ilung@Danielerat MINGW64 ~/OneDrive/desktop/gitExercise (main)
+$ git remote add git-copy https://github.com/danielerat/git-exercise-copy.git
+
+ilung@Danielerat MINGW64 ~/OneDrive/desktop/gitExercise (main)
+$ git status
+On branch main
+Your branch is behind 'origin/main' by 14 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   home.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ilung@Danielerat MINGW64 ~/OneDrive/desktop/gitExercise (main)
+$ git add home.html
+
+ilung@Danielerat MINGW64 ~/OneDrive/desktop/gitExercise (main)
+$ git commit -m "Full poem on the home page"
+[main 28c16c9] Full poem on the home page
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+ilung@Danielerat MINGW64 ~/OneDrive/desktop/gitExercise (main)
+$ git remote
+git-copy
+origin
+
+ilung@Danielerat MINGW64 ~/OneDrive/desktop/gitExercise (main)
+$ git push
+git pushTo https://github.com/danielerat/git-exercise.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/danielerat/git-exercise.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+ilung@Danielerat MINGW64 ~/OneDrive/desktop/gitExercise (main)
+$ git pull
+Auto-merging home.html
+CONFLICT (content): Merge conflict in home.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+ilung@Danielerat MINGW64 ~/OneDrive/desktop/gitExercise (main|MERGING)
+$ git push origin
+To https://github.com/danielerat/git-exercise.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/danielerat/git-exercise.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+ilung@Danielerat MINGW64 ~/OneDrive/desktop/gitExercise (main|MERGING)
+$ git pull
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+ilung@Danielerat MINGW64 ~/OneDrive/desktop/gitExercise (main|MERGING)
+$ git pull
+Already up to date.
+
+ilung@Danielerat MINGW64 ~/OneDrive/desktop/gitExercise (main)
+$ git push
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 653 bytes | 653.00 KiB/s, done.
+Total 5 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 2 local objects.
+To https://github.com/danielerat/git-exercise.git
+   9757c6d..02b07eb  main -> main
+
+ilung@Danielerat MINGW64 ~/OneDrive/desktop/gitExercise (main)
+$ git push git-copy
+Enumerating objects: 73, done.
+Counting objects: 100% (73/73), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (70/70), done.
+Writing objects: 100% (73/73), 13.94 KiB | 1.16 MiB/s, done.
+Total 73 (delta 35), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (35/35), done.
+To https://github.com/danielerat/git-exercise-copy.git
+ * [new branch]      main -> main
+
+```
