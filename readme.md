@@ -755,3 +755,168 @@ To https://github.com/danielerat/git-exercise.git
    44717f6..821ae3a  ft/faq-page -> ft/faq-page
 
 ```
+
+### Exercise 2
+
+```bash
+ilung@Danielerat MINGW64 ~/OneDrive/desktop/gitExercise (main)
+$ git switch ft/faq-page
+Switched to branch 'ft/faq-page'
+Your branch is up to date with 'origin/ft/faq-page'.
+
+ilung@Danielerat MINGW64 ~/OneDrive/desktop/gitExercise (ft/faq-page)
+$
+
+ilung@Danielerat MINGW64 ~/OneDrive/desktop/gitExercise (ft/faq-page)
+$ git switch ft/home-page-redesign
+fatal: invalid reference: ft/home-page-redesign
+
+ilung@Danielerat MINGW64 ~/OneDrive/desktop/gitExercise (ft/faq-page)
+$ git switch -C ft/home-page-redesign
+Switched to a new branch 'ft/home-page-redesign'
+
+ilung@Danielerat MINGW64 ~/OneDrive/desktop/gitExercise (ft/home-page-redesign)
+$ git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+ilung@Danielerat MINGW64 ~/OneDrive/desktop/gitExercise (main)
+$ git add home.html
+
+ilung@Danielerat MINGW64 ~/OneDrive/desktop/gitExercise (main)
+$ git commit -m "Adding New Changes to the home page
+> - Poison tree "
+[main 5708730] Adding New Changes to the home page - Poison tree
+ 1 file changed, 4 insertions(+)
+
+ilung@Danielerat MINGW64 ~/OneDrive/desktop/gitExercise (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 425 bytes | 212.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/danielerat/git-exercise.git
+   b7c06d8..5708730  main -> main
+
+ilung@Danielerat MINGW64 ~/OneDrive/desktop/gitExercise (main)
+$ git switch ft/home-page-redesign
+Switched to branch 'ft/home-page-redesign'
+
+ilung@Danielerat MINGW64 ~/OneDrive/desktop/gitExercise (ft/home-page-redesign)
+$ git log --oneline --all --graph
+* 5708730 (origin/main, main) Adding New Changes to the home page - Poison tree
+* b7c06d8 HIstory exercise 1 bundle 3
+| * 821ae3a (HEAD -> ft/home-page-redesign, origin/ft/faq-page, ft/faq-page) Revert "Adding the team page"
+| * 44717f6 Creating our faq page
+| * 1129b47 (origin/ft/contact-page, ft/contact-page) Adding the contact page
+| * 7ee7885 Adding the team page - Creating the page for our team
+|/
+| * a16f52d (origin/ft/team-page, ft/team-page) Adding the team page - Creating the page for our team
+|/
+* 3eab4a1 Updating the history of the readme.md file
+*   72a0d91 Merge branch 'ft/service-redesign'
+|\
+| * 8b27feb (origin/ft/service-redesign, ft/service-redesign) Changing the service page - Adding two ninjas
+* | 1f70cd1 Adding A ninja from somewhere else in the service page
+|/
+* b9a0917 Bundle 2 Exercise 1 history
+*   a816703 Merge pull request #1 from danielerat/ft/bundle-2
+|\
+| * eec7020 (origin/ft/bundle-2, ft/bundle-2) Adding the Service Page
+| * 531ca3d (origin/dev, dev) Bundle 1 Exercise 2
+| * 24552fa Adding the home and about page
+| * 5133a5a Adding our home page
+| * 7cf6915 Exercise 1 history
+|/
+* 3af0a29 Initial commit with a readmefile
+
+ilung@Danielerat MINGW64 ~/OneDrive/desktop/gitExercise (ft/home-page-redesign)
+$ git log
+commit 821ae3a208b6a66127a19da32dcc6d79b0a16b82 (HEAD -> ft/home-page-redesign, origin/ft/faq-page, ft/faq-page)
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Thu Jul 27 11:49:52 2023 +0200
+
+    Revert "Adding the team page"
+
+    This reverts commit a16f52dfdf970d0a3a33bc2a865357358b404969.
+
+commit 44717f6eaaa9320935dee8015c90394471be53c3
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Thu Jul 27 11:43:18 2023 +0200
+
+    Creating our faq page
+
+commit 1129b47b06277cd138034e015c1854c5af7927c9 (origin/ft/contact-page, ft/contact-page)
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Thu Jul 27 11:35:21 2023 +0200
+
+    Adding the contact page
+
+
+ilung@Danielerat MINGW64 ~/OneDrive/desktop/gitExercise (ft/home-page-redesign)
+$ git rebase main
+Successfully rebased and updated refs/heads/ft/home-page-redesign.
+
+ilung@Danielerat MINGW64 ~/OneDrive/desktop/gitExercise (ft/home-page-redesign)
+$ git log
+commit 1231c5d6ac92bb8f2e131723dd54dc18abf7ac07 (HEAD -> ft/home-page-redesign)
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Thu Jul 27 11:49:52 2023 +0200
+
+    Revert "Adding the team page"
+
+    This reverts commit a16f52dfdf970d0a3a33bc2a865357358b404969.
+
+commit 8efef03b31001fcf1c0b7502af5b1243421b7102
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Thu Jul 27 11:43:18 2023 +0200
+
+    Creating our faq page
+
+commit c733fb3922c8afdf5a5b1c39833358575efe2175
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Thu Jul 27 11:35:21 2023 +0200
+
+    Adding the contact page
+
+
+ilung@Danielerat MINGW64 ~/OneDrive/desktop/gitExercise (ft/home-page-redesign)
+$ git add home.html
+g
+ilung@Danielerat MINGW64 ~/OneDrive/desktop/gitExercise (ft/home-page-redesign)
+$ git commit -m "Adding The second half part of the poison tree"
+[ft/home-page-redesign dd51ada] Adding The second half part of the poison tree
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+ilung@Danielerat MINGW64 ~/OneDrive/desktop/gitExercise (ft/home-page-redesign)
+$ git push
+fatal: The current branch ft/home-page-redesign has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/home-page-redesign
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+ilung@Danielerat MINGW64 ~/OneDrive/desktop/gitExercise (ft/home-page-redesign)
+$ git push --set-upstream origin ft/home-page-redesign
+Enumerating objects: 16, done.
+Counting objects: 100% (16/16), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (14/14), 2.07 KiB | 424.00 KiB/s, done.
+Total 14 (delta 6), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (6/6), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/home-page-redesign' on GitHub by visiting:
+remote:      https://github.com/danielerat/git-exercise/pull/new/ft/home-page-redesign
+remote:
+To https://github.com/danielerat/git-exercise.git
+ * [new branch]      ft/home-page-redesign -> ft/home-page-redesign
+branch 'ft/home-page-redesign' set up to track 'origin/ft/home-page-redesign'.
+
+```
