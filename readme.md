@@ -1044,3 +1044,66 @@ $ git log --oneline --all --graph
 ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/squashing)
 
 ```
+
+## Bundle 5
+
+### Exercise 1
+
+```bash
+https://danielerat.github.io/git-exercise/
+```
+
+### Exercise 2
+
+```bash
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop
+$ git clone https://github.com/danielerat/git-cafe-exercise.git
+Cloning into 'git-cafe-exercise'...
+remote: Enumerating objects: 107, done.
+remote: Counting objects: 100% (14/14), done.
+remote: Compressing objects: 100% (10/10), done.
+remote: Total 107 (delta 5), reused 4 (delta 4), pack-reused 93
+Receiving objects: 100% (107/107), 1.95 MiB | 34.00 KiB/s, done.
+Resolving deltas: 100% (5/5), done.
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop
+$ cd git-cafe-exercise/
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (main)
+$ code .
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (main)
+$ git status
+gOn branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+it
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (main)
+$ git add index.html
+gi
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (main)
+$ git commit -m "change place to restaurant"
+[main 058834f] change place to restaurant
+ 1 file changed, 399 insertions(+), 239 deletions(-)
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.55 KiB | 530.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/danielerat/git-cafe-exercise.git
+   d1d3f9c..058834f  main -> main
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (main)
+
+```
