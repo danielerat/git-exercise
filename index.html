@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <style>
+      body::before {
+        content: "✌️";
+        font-size: 150vh;
+        color: rgba(0, 0, 0, 0.1);
+        position: absolute;
+        top: -35vh;
+      }
+
+      body {
+        height: 100vh;
+        overflow: hidden;
+        background-image: radial-gradient(
+          farthest-corner at 40px 40px,
+          rgba(139, 19, 19, 0.7) 0%,
+          rgb(9, 46, 101) 100%
+        );
+        display: flex;
+        align-items: center;
+      }
+
+      blockquote {
+        color: rgba(0, 0, 0, 0.8);
+        font-family: Tahoma, sans-serif;
+        font-size: 35px;
+        width: 60%;
+        margin: 0 auto;
+      }
+      blockquote h1 {
+        font-size: 4rem;
+      }
+      blockquote p {
+        font-style: italic;
+        margin-bottom: 0;
+      }
+
+      blockquote p::before,
+      blockquote p::after {
+        content: "“";
+        font-family: Georgia;
+        font-size: 8rem;
+        margin: -2rem 0 0 -4rem;
+        position: absolute;
+        opacity: 0.5;
+      }
+
+      blockquote p::after {
+        content: "”";
+        margin: -1rem -4rem 0 0;
+      }
+
+      blockquote cite {
+        font-size: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <blockquote>
+      <p>
+        I was angry with my friend; I told my wrath, my wrath did end. I was
+        angry with my foe: I told it not, my wrath did grow. And I waterd it in
+        fears, Night & morning with my tears: And I sunned it with smiles, And
+        with soft deceitful wiles. And it grew both day and night. Till it bore
+        an apple bright. And my foe beheld it shine, And he knew that it was
+        mine. And into my garden stole, When the night had veild the pole; In
+        the morning glad I see; My foe outstretched beneath the tree.
+      </p>
+      <cite>William Blake</cite>
+    </blockquote>
+    <div class="quote">
+      <blockquote>
+        <p></p>
+      </blockquote>
+    </div>
+  </body>
+</html>
