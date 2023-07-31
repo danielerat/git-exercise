@@ -858,3 +858,189 @@ To https://github.com/danielerat/git-exercise-copy.git
  * [new branch]      main -> main
 
 ```
+
+### Exercise 2
+
+```bash
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (main)
+$ git switch -c ft/footer
+Switched to a new branch 'ft/footer'
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/footer)
+$ git add .
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/footer)
+$ git commit -m "Footer section of our site"
+[ft/footer 1b38d94] Footer section of our site
+ 1 file changed, 8 insertions(+)
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/footer)
+$ git add .
+g
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/footer)
+$ git commit -m "More Changes on our footer"
+[ft/footer 6ca6914] More Changes on our footer
+ 1 file changed, 1 insertion(+)
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/footer)
+$ git push
+fatal: The current branch ft/footer has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/footer
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/footer)
+$ git push --set-upstream origin ft/footer
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 693 bytes | 693.00 KiB/s, done.
+Total 6 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'ft/footer' on GitHub by visiting:
+remote:      https://github.com/danielerat/git-exercise/pull/new/ft/footer
+remote:
+To https://github.com/danielerat/git-exercise.git
+ * [new branch]      ft/footer -> ft/footer
+branch 'ft/footer' set up to track 'origin/ft/footer'.
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/footer)
+$ git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (main)
+$ git switch -c ft/squashing
+Switched to a new branch 'ft/squashing'
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/squashing)
+$ git log
+commit fc597069c0cbe0f8a7eb0206b851bbae4024b513 (HEAD -> ft/squashing, origin/main, git-copy/main, main)
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Fri Jul 28 11:52:11 2023 +0200
+
+    History Bundle 4 Exercise 1
+
+commit 02b07eb06e80ec76bef382bf25ff2ba75112eab0
+Merge: 28c16c9 9757c6d
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Fri Jul 28 11:45:05 2023 +0200
+
+    Merge branch 'main' of https://github.com/danielerat/git-exercise
+
+commit 28c16c98878b4e0f43910e5ebed2cb92b0f946c1
+Author: danielerat <davidodo2015@gmail.com>
+Date:   Fri Jul 28 11:40:16 2023 +0200
+
+    Full poem on the home page
+
+commit 9757c6df963582b8adf595ed52182c6b73351453
+Merge: d04d13e dd51ada
+Author: Cynthia <109437062+CynthiaUmuhire@users.noreply.github.com>
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/squashing)
+$ git merge --squash ft/footer
+Updating fc59706..6ca6914
+Fast-forward
+Squash commit -- not updating HEAD
+ home.html | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/squashing)
+$ git push --set-upstream origin ft/squashing
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'ft/squashing' on GitHub by visiting:
+remote:      https://github.com/danielerat/git-exercise/pull/new/ft/squashing
+remote:
+To https://github.com/danielerat/git-exercise.git
+ * [new branch]      ft/squashing -> ft/squashing
+branch 'ft/squashing' set up to track 'origin/ft/squashing'.
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/squashing)
+$
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/squashing)
+$ git add .
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/squashing)
+$ git commit -m "footer Changes Squashing"
+[ft/squashing 376448f] footer Changes Squashing
+ 1 file changed, 9 insertions(+)
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/squashing)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 445 bytes | 445.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/danielerat/git-exercise.git
+   fc59706..376448f  ft/squashing -> ft/squashing
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/squashing)
+$ git log --oneline --all --graph
+* 376448f (HEAD -> ft/squashing, origin/ft/squashing) footer Changes Squashing
+| * 6ca6914 (origin/ft/footer, ft/footer) More Changes on our footer
+| * 1b38d94 Footer section of our site
+|/
+* fc59706 (origin/main, git-copy/main, main) History Bundle 4 Exercise 1
+*   02b07eb Merge branch 'main' of https://github.com/danielerat/git-exercise
+|\
+| *   9757c6d Merge pull request #6 from danielerat/ft/home-page-redesign
+| |\
+| * \   d04d13e Merge pull request #5 from danielerat/ft/faq-page
+| |\ \
+| | * | 821ae3a (origin/ft/faq-page, ft/faq-page) Revert "Adding the team page"
+| | * | 44717f6 Creating our faq page
+| * | | 8bb8a61 Merge pull request #4 from danielerat/ft/contact-page
+| |\| |
+| | * | 1129b47 (origin/ft/contact-page, ft/contact-page) Adding the contact page
+| | * | 7ee7885 Adding the team page - Creating the page for our team
+| * | |   51aa905 Merge pull request #3 from danielerat/ft/team-page
+| |\ \ \
+| | * | | a16f52d (origin/ft/team-page, ft/team-page) Adding the team page - Creating the page for our team
+| | |/ /
+* | / / 28c16c9 Full poem on the home page
+|/ / /
+| | | * 365b750 (origin/ft/home-page-redesign, ft/home-page-redesign) Adding history of Bundle 3 Exercise 2
+| | |/
+| | * dd51ada Adding The second half part of the poison tree
+| | * 1231c5d Revert "Adding the team page"
+| | * 8efef03 Creating our faq page
+| | * c733fb3 Adding the contact page
+| | * 2988ada Adding the team page - Creating the page for our team
+| |/
+|/|
+* | 5708730 Adding New Changes to the home page - Poison tree
+* | b7c06d8 HIstory exercise 1 bundle 3
+|/
+* 3eab4a1 Updating the history of the readme.md file
+*   72a0d91 Merge branch 'ft/service-redesign'
+|\
+| * 8b27feb (origin/ft/service-redesign, ft/service-redesign) Changing the service page - Adding two ninjas
+* | 1f70cd1 Adding A ninja from somewhere else in the service page
+|/
+* b9a0917 Bundle 2 Exercise 1 history
+*   a816703 Merge pull request #1 from danielerat/ft/bundle-2
+|\
+| * eec7020 (origin/ft/bundle-2, ft/bundle-2) Adding the Service Page
+| * 531ca3d (origin/dev, dev) Bundle 1 Exercise 2
+| * 24552fa Adding the home and about page
+| * 5133a5a Adding our home page
+| * 7cf6915 Exercise 1 history
+|/
+* 3af0a29 Initial commit with a readmefile
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/gitExercise (ft/squashing)
+
+```
