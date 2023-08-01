@@ -757,6 +757,7 @@ To https://github.com/danielerat/git-exercise.git
 ```
 
 ### Exercise 2
+
 ```bash
 ilung@Danielerat MINGW64 ~/OneDrive/desktop/gitExercise (main)
 $ git switch ft/faq-page
@@ -1269,5 +1270,188 @@ To https://github.com/danielerat/git-cafe-exercise.git
    d1d3f9c..058834f  main -> main
 
 ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (main)
+
+```
+
+## Bundle 6
+
+### Exercise 1
+
+```bash
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (main)
+$ git branch
+* main
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (main)
+$ git switch -c ft/manu-redesign
+Switched to a new branch 'ft/manu-redesign'
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (ft/manu-redesign)
+$ git branch -m ft/many-redesign ft/menu-page
+error: refname refs/heads/ft/many-redesign not found
+fatal: Branch rename failed
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (ft/manu-redesign)
+$ git branch -m ft/manu-redesign ft/menu-page
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (ft/menu-page)
+$ git branch
+* ft/menu-page
+  main
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (ft/menu-page)
+$ echo "" > menu.html
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (ft/menu-page)
+$ git add menu.html
+warning: in the working copy of 'menu.html', LF will be replaced by CRLF the next time Git touches it
+g
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (ft/menu-page)
+$ git commit -m "Adding a new Menu page"
+[ft/menu-page 5802c79] Adding a new Menu page
+ 1 file changed, 11 insertions(+)
+ create mode 100644 menu.html
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (ft/menu-page)
+$ git push
+fatal: The current branch ft/menu-page has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/menu-page
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (ft/menu-page)
+$ git push --set-upstream origin ft/menu-page
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 443 bytes | 221.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/menu-page' on GitHub by visiting:
+remote:      https://github.com/danielerat/git-cafe-exercise/pull/new/ft/menu-page
+remote:
+To https://github.com/danielerat/git-cafe-exercise.git
+ * [new branch]      ft/menu-page -> ft/menu-page
+
+```
+
+### Exercise 2
+
+```bash
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (ft/menu-page)
+$ git branch
+* ft/menu-page
+  main
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (ft/menu-page)
+$ git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (main)
+$ code .
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (main)
+$ git switch -c ft/bug-fix
+Switched to a new branch 'ft/bug-fix'
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (ft/bug-fix)
+$ mv index-4.html contact.html
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (ft/bug-fix)
+$ git status
+On branch ft/bug-fix
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    index-4.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        contact.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (ft/bug-fix)
+$ git add .
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (ft/bug-fix)
+$ git commit -m "New Contact page
+> change index-4.html to contact.html"
+[ft/bug-fix 2a9c65c] New Contact page change index-4.html to contact.html
+ 1 file changed, 203 insertions(+), 203 deletions(-)
+ rename index-4.html => contact.html (97%)
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (ft/bug-fix)
+$ git push --set-upstream origin ft/bug-fix
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 2.51 KiB | 2.51 MiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/bug-fix' on GitHub by visiting:
+remote:      https://github.com/danielerat/git-cafe-exercise/pull/new/ft/bug-fix
+remote:
+To https://github.com/danielerat/git-cafe-exercise.git
+ * [new branch]      ft/bug-fix -> ft/bug-fix
+branch 'ft/bug-fix' set up to track 'origin/ft/bug-fix'.
+
+```
+
+### Exercise 3
+
+```bash
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (main)
+$ git switch -c ft/contact-change
+Switched to a new branch 'ft/contact-change'
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (ft/contact-change)
+$ git add .
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (ft/contact-change)
+$ git commit -m "Updating the phone number from contact page"
+[ft/contact-change 932b8c5] Updating the phone number from contact page
+ 1 file changed, 231 insertions(+), 163 deletions(-)
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (ft/contact-change)
+$ git push --set-upstream ft/contact-change
+fatal: 'ft/contact-change' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+ilung@Danielerat MINGW64 ~/OneDrive/Desktop/git-cafe-exercise (ft/contact-change)
+$ git push --set-upstream origin ft/contact-change
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.41 KiB | 723.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'ft/contact-change' on GitHub by visiting:
+remote:      https://github.com/danielerat/git-cafe-exercise/pull/new/ft/contact-change
+remote:
+To https://github.com/danielerat/git-cafe-exercise.git
+ * [new branch]      ft/contact-change -> ft/contact-change
+branch 'ft/contact-change' set up to track 'origin/ft/contact-change'.
 
 ```
